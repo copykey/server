@@ -38,7 +38,7 @@ def upload_file():
             type,
             cool_video_output=os.path.join(app.config['UPLOAD_FOLDER'], 'cool_video.mp4')
         )
-        return render_template("index.html", result=True, filename=".".join(filename.split(".")[:-1]) + '.scad', img1=b64encode(cv2.imencode('.jpg', img1)[1]).decode('utf-8'), img2=b64encode(cv2.imencode('.jpg', img2)[1]).decode('utf-8'))
+        return render_template("index.html", result=True, filename=".".join(filename.split(".")[:-1]) + '.scad', img1=b64encode(cv2.imencode('.jpg', img1)[1]).decode('utf-8'), img2=b64encode(cv2.imencode('.jpg', img2)[1]).decode('utf-8'), time=time.time())
         cv2.imshow(img1)
         cv2.waitKey(0)
     # return redirect(url_for('get_file', filename=filename + '.scad'))
