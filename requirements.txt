@@ -1,0 +1,3 @@
+flask
+copykey
+opencv-python
